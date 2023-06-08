@@ -1,0 +1,28 @@
+import random
+did = '0123456789'
+low_abc = 'abcdefghijklmnopqrstuvwxyz'
+up_abc= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+sim = '!#$%&*+-=?@^_'
+chars = ''
+print()
+print("Добро пожаловать в генератор паролей")
+print()
+kvo = int(input("Введите к-во паролей для генерации \n >>> "))
+print()
+leng = int(input("Введите длину одного пароля(в символах) \n >>> "))
+print()
+did1 = input("Нужно ли включать цифры в пароль ДА/НЕТ ? \n >>> ")
+print()
+abc1 = input("Включать ли строчные буквы ДА/НЕТ ?\n >>> ")
+print()
+sim1 = input("Включать ли знаки (!#$%&*+-=?@^_) ДА/НЕТ ? \n >>> ")
+if did1.lower() == 'да':
+    chars += did
+if abc1.lower() == 'да':
+    chars += low_abc
+    chars += up_abc
+if sim1.lower() == 'да':
+    chars += sim
+for i in range(kvo):
+    print(*random.sample(chars, int(leng)), sep='')
+          
